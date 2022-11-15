@@ -91,3 +91,11 @@ curl -F person=anonymous -F secret=@file.txt http://example.com/submit.cgi
 # details: https://matthewsetter.com/check-if-file-is-available-with-curl/
 curl -o /dev/null --silent -Iw "%{http_code}" https://example.com/my.remote.tarball.gz
 ```
+
+```bash
+# Use Curl and xmllint to get the latest episode of a podcast
+# details: https://devhints.io/xpath
+curl -Ss "https://www.thisamericanlife.org/podcast/rss.xml" | xmllint --xpath '/rss/channel/item[1]' -
+```
+
+
